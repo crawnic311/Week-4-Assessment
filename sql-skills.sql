@@ -83,5 +83,4 @@ SELECT a.title "Album", art.name "Artist" FROM album a
 JOIN artist art ON art.artist_id = a.artist_id
 
 
---Part 2: Data Manipulation with Python
 
