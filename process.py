@@ -16,5 +16,18 @@ def sales_reports(log_file):
 #Prints the current line if the condition above evaluated to true
             print(line)
 
-#calles a function called sales_reports
-sales_reports(log_file)
+#calles the sales_reports function
+#sales_reports(log_file)
+
+
+#Extra Credit
+def melon_orders(log_file):
+    for line in log_file:
+        line = line.rstrip()
+        quant = line[15:18]
+        int_quant = int(quant)
+        if int_quant > 10:
+            print(line)
+
+
+melon_orders(log_file)
