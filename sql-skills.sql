@@ -1,3 +1,4 @@
+--Part 1 SQL Skills
 --Artist Table
 --Problem 1
 INSERT INTO artist(name)
@@ -60,4 +61,27 @@ WHERE (il.unit_price * i.total) < 5 --228 orders
 SELECT SUM(total) FROM invoice
 
 
+--JOIN Queries (Various tables)
+--Problem 1
+SELECT * FROM invoice i
+JOIN invoice_line il ON il.invoice_id = i.invoice_id
+WHERE il.unit_price > .99
+
+
+--Problem 2
+SELECT i.invoice_date, c.first_name, c.last_name, i.total FROM invoice i
+JOIN customer c ON c.customer_id = i.customer_id
+
+
+--Problem 3
+SELECT c.first_name "Customer", c.last_name "Customer", e.first_name "Employee", e.last_name "Employee" FROM customer c
+JOIN employee e ON e.employee_id = c.support_rep_id
+
+
+--Problem 4
+SELECT a.title "Album", art.name "Artist" FROM album a
+JOIN artist art ON art.artist_id = a.artist_id
+
+
+--Part 2: Data Manipulation with Python
 
